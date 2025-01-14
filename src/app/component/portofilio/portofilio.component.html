@@ -1,0 +1,87 @@
+
+<div class="h-100 py-4">
+  <div class="container text-center h-100 pt-3">
+  <div class="   row">
+
+    <h2 class="text-center pt-4 my-0"   >PORTFOLIO COMPONENT</h2>
+
+
+
+    <div class="divider   text-center">
+      <div class="line"></div>
+      <i class="fas fa-star"></i>
+      <div class="line"></div>
+    </div>
+
+
+
+
+    @for ( imgUrl  of  imagesURL; track $index) {
+
+      <div           class="col-md-4   g-5"  >
+
+
+
+        <div class="position-relative">
+
+      <img     [class]="'w-100  border rounded-3'   "    [src]="imgUrl" alt="Portfolio"         >
+
+
+      <div                (click)="openLightBox();    currentImageIndex($index)"
+
+      class="d-flex justify-content-center align-items-center layer rounded-3 position-absolute top-0 bottom-0 start-0 end-0">
+      <i  class="text-white fa-solid fa-plus fa-6x  "></i>
+    </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div [ngClass]="{'d-none':flag}" (click)="closeLightBox($event)" [style]="'background-color:rgba(0,0,0,.25);'"
+      class="lightbox position-fixed top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center">
+      <div class=" position-relative">
+        <button class="text-white btn btn-secondary position-absolute top-0 end-0 m-3"><i
+            class="fa-solid fa-xmark"></i></button>
+        <img (click)="imgLightBox($event)" [style]="'width:600px;'" class="rounded-3" [src]="imagesURL[currentImage]"
+          alt="poert1">
+      </div>
+    </div>
+<!--
+    <div         [ngClass]="{'d-none':flag}" (click)="closeLightBox($event)" [style]="'background-color:rgba(0,0,0,.25);'"
+
+    class="  lightbox position-fixed =top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center">
+
+
+    <div class=" position-relative"                  *ngif="!flag" (click)="closeLightBox($event)" >
+      <button class="text-white btn btn-secondary position-absolute top-0 end-0 m-3"                    (click)="closeLightBox($event)"       > <i class="fa-solid fa-xmark"        ></i></button>
+
+
+      <img (click)="imgLightBox($event)"  [style]="'width:500px;'" class="rounded-3"     [src]="imagesURL[currentImage]"   alt="poert1">
+
+    </div>
+  </div> -->
+
+
+
+    </div>
+    }
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+
+
+
+

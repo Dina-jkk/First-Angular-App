@@ -1,0 +1,18 @@
+.activ{
+  background-color: #1ABC9C;
+
+  border: 2px solid #1ABC9C;
+  border-radius: 10px;
+}
+
+.navbar
+{background-color: #2C3E50;
+font-size: 20px;
+font-weight: 1000;
+}
+
+
+.nav-link
+{
+color:white;
+}
